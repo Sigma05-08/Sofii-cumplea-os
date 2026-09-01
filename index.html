@@ -15,7 +15,7 @@
 
         body {
             /* AQUÍ PUEDES PONER TU IMAGEN DE PLANTILLA: cambia 'fondo.jpg' por el nombre de tu archivo de imagen */
-            background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)), url('fondo de gatitos.avif');
+            background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)), url('fondo_de_gatitos.avif');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -167,8 +167,23 @@
 
         function verificarAcertijo() {
             let respuesta = document.getElementById('respuesta-acertijo').value.toLowerCase().trim();
-            if (respuesta.includes('que es dificil de encontrar') || respuesta.includes('Que son únicos en su especie') || respuesta.includes('Que no andan por ahí fácilmente') || respuesta.includes('Que no se encuentran en cualquier lugar') || respuesta.includes('Que son difíciles de conseguir') || respuesta.includes('Que son raros y especiales') || respuesta.includes('Que no se ven todos los días') || respuesta.includes('Que son difíciles de hallar') || respuesta.includes('Que son escasos y valiosos') || respuesta.includes('Que no se encuentran fácilmente') || respuesta.includes('Que son difíciles de localizar') || respuesta.includes('Que son poco comunes y valiosos') || respuesta.includes('Que no se encuentran en abundancia') || respuesta.includes('que son difíciles de obtener') || respuesta.includes('Que son raros y apreciados') || respuesta.includes('Que no se encuentran con facilidad') || respuesta.includes('Que son difíciles de descubrir') || respuesta.includes('que es difícil de encontrar) || respuesta.includes('Que no se encuentran en cualquier lugar fácilmente') || respuesta.includes('Que son difíciles de conseguir y valiosos') || respuesta.includes('Que son raros y difíciles de encontrar') || respuesta.includes('Que no se encuentran con facilidad y son valiosos') || respuesta.includes('Que son difíciles de localizar y apreciados') || respuesta.includes('Que son escasos y difíciles de hallar') || respuesta.includes('Que no se encuentran fácilmente y son valiosos') || respuesta.includes('Que son difíciles de obtener y apreciados') || respuesta.includes('Que son raros y difíciles de conseguir') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son escasos y difíciles de localizar') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de conseguir y apreciados') || respuesta.includes('Que son raros y difíciles de hallar') || respuesta.includes('Que no se encuentran con facilidad y son valiosos') || respuesta.includes('Que son difíciles de localizar y apreciados') || respuesta.includes('Que son escasos y difíciles de obtener') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son raros y difíciles de conseguir') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de hallar y valiosos') || respuesta.includes('Que son escasos y difíciles de localizar') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de obtener y valiosos') || respuesta.includes('Que son raros y difíciles de descubrir') || respuesta.includes('que es dificil de conseguir') || respuesta.includes('que son difíciles de conseguir') || respuesta.includes('Que son escasos y difíciles de hallar') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de localizar y valiosos') || respuesta.includes('Que son raros y difíciles de obtener') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son escasos y difíciles de conseguir') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('que son dificiles de conseguir') || respuesta.includes('que son difíciles de conseguir') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de obtener y valiosos') || respuesta.includes('Que son escasos y difíciles de descubrir') || respuesta.includes('que no son faciles de conseguir') || respuesta.includes('que no son fáciles de conseguir') || respuesta.includes('Que son difíciles de hallar y valiosos') || respuesta.includes('Que son raros y difíciles de localizar') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son escasos y difíciles de obtener') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de conseguir y valiosos') || respuesta.includes('Que son raros y difíciles de hallar') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de localizar y valiosos') || respuesta.includes('Que son escasos y difíciles de descubrir') || respuesta.includes('Que no se encuentran fácilmente y son apreciados')) {
-                alert(" Esperoo que no te haya costado mucho jeje 😖");
+            
+            // Lista de todas las variantes permitidas (todas en minúsculas)
+            let validas = [
+                "que es difícil de encontrar", "que son escasos", "que valen oro", 
+                "que cuestan conseguirlos", "que hay pocos como ellos", "que no hay dos iguales", 
+                "que son una rareza", "que brillan por su ausencia", "que hay que buscar bien para hallarlos", 
+                "que no se ven todos los días", "que son un tesoro oculto", "que cuestan un mundo hallar", 
+                "que son especie en extinción", "que es un milagro dar con ellos", "que son exclusivos", 
+                "que no andan por ahí fácilmente", "que son de colección", "que hay que tener suerte para toparse con ellos", 
+                "que es difícilísimo de hallar", "que casi no existen", "que son únicos en su especie"
+            ];
+
+            // Revisa si lo que escribió incluye o coincide con alguna de las opciones
+            let acerto = validas.some(v => respuesta.includes(v));
+
+            if (acerto) {
+                alert("¡Esperoo que no te haya costado mucho jeje 😳");
                 siguienteSeccion(3);
             } else {
                 document.getElementById('error').style.display = 'block';
