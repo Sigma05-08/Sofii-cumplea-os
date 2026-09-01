@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños 🖤</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* AQUÍ PUEDES PONER TU IMAGEN DE PLANTILLA: cambia 'fondo.jpg' por el nombre de tu archivo de imagen */
+            background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)), url('fondo de gatitos.avif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(45, 45, 45, 0.9);
+            border: 1px solid #555;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .cat-deco {
+            font-size: 35px;
+            margin-bottom: 15px;
+            letter-spacing: 5px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #f5f5f5;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            background: #222;
+            border: 1px solid #777;
+            color: #fff;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #aaa;
+        }
+
+        button {
+            background-color: #e0e0e0;
+            color: #1a1a1a;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .carta {
+            background: #222222;
+            border: 1px solid #444;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .error-msg {
+            color: #ff8080;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- SECCIÓN 1: INICIO -->
+        <div id="seccion-1">
+            <div class="cat-deco">🥺</div>
+            <h1>Olaaaa jeje"</h1>
+            <p>Como dije, esperoo que tdvia no te hallas dormido cndo te entregue esto, recienn llego a mi casita ⛺, se que nos conocemos poco, pero aún asúi queria darte este detalle ;D asíi que antes de pasarr, vamos a ver ke tal te va con los acertijos jsjs.</p>
+            <button onclick="lanzarAlertaInicio()">Click aquíi :> </button>
+        </div>
+
+        <!-- SECCIÓN 2: ACERTIJO -->
+        <div id="seccion-2" class="hidden">
+            <div class="cat-deco"> \(￣︶￣*\))</div>
+            <h1> Acertijoooo</h1>
+            <p><i>"Que tienen en comun una computadora ficha, dinero y tú??(P.D: Dyana dio la idea del acertij jjsdja)"</i></p>
+            <input type="text" id="respuesta-acertijo" placeholder="Tu respuesta...">
+            <div id="error" class="error-msg">Pista: No todos los dias se encuentra algo asi</div>
+            <button onclick="verificarAcertijo()"> será? (no te rindas 🙂‍↔️)</button>
+        </div>
+
+        <!-- SECCIÓN 3: CARTA FINAL -->
+        <div id="seccion-3" class="hidden">
+            <div class="cat-deco">😭🎈🎊🎂🎉</div>
+            <h1>¡Feliz Cumpleaños Sofiii!!!!</h1>
+            <div class="carta">
+                <p>Graciass x llegar hasta aquiii jsjsjs 🥺.</p>
+                <p>Quería escribirte algo especial por tu día :>. Eres una persona increíble,interesante y tienes una esencia súper auténtica y talentosa. con lo poco que hemos hablado me caíste super bienn :>.</p>
+                <p>Espero que pases un cumpleaños súper lindo!!🥺🥳, junto a todos los que te quieren 🫂💗</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function lanzarAlertaInicio() {
+            // Un mensajito emergente dinámico en JS antes de pasar de sección
+            alert(" Preparatee :>");
+            siguienteSeccion(2);
+        }
+
+        function siguienteSeccion(seccionNum) {
+            document.getElementById('seccion-1').classList.add('hidden');
+            document.getElementById('seccion-2').classList.add('hidden');
+            document.getElementById('seccion-3').classList.add('hidden');
+            
+            document.getElementById('seccion-' + seccionNum).classList.remove('hidden');
+        }
+
+        function verificarAcertijo() {
+            let respuesta = document.getElementById('respuesta-acertijo').value.toLowerCase().trim();
+            if (respuesta.includes('que es dificil de encontrar') || respuesta.includes('Que son únicos en su especie') || respuesta.includes('Que no andan por ahí fácilmente') || respuesta.includes('Que no se encuentran en cualquier lugar') || respuesta.includes('Que son difíciles de conseguir') || respuesta.includes('Que son raros y especiales') || respuesta.includes('Que no se ven todos los días') || respuesta.includes('Que son difíciles de hallar') || respuesta.includes('Que son escasos y valiosos') || respuesta.includes('Que no se encuentran fácilmente') || respuesta.includes('Que son difíciles de localizar') || respuesta.includes('Que son poco comunes y valiosos') || respuesta.includes('Que no se encuentran en abundancia') || respuesta.includes('que son difíciles de obtener') || respuesta.includes('Que son raros y apreciados') || respuesta.includes('Que no se encuentran con facilidad') || respuesta.includes('Que son difíciles de descubrir') || respuesta.includes('que es difícil de encontrar) || respuesta.includes('Que no se encuentran en cualquier lugar fácilmente') || respuesta.includes('Que son difíciles de conseguir y valiosos') || respuesta.includes('Que son raros y difíciles de encontrar') || respuesta.includes('Que no se encuentran con facilidad y son valiosos') || respuesta.includes('Que son difíciles de localizar y apreciados') || respuesta.includes('Que son escasos y difíciles de hallar') || respuesta.includes('Que no se encuentran fácilmente y son valiosos') || respuesta.includes('Que son difíciles de obtener y apreciados') || respuesta.includes('Que son raros y difíciles de conseguir') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son escasos y difíciles de localizar') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de conseguir y apreciados') || respuesta.includes('Que son raros y difíciles de hallar') || respuesta.includes('Que no se encuentran con facilidad y son valiosos') || respuesta.includes('Que son difíciles de localizar y apreciados') || respuesta.includes('Que son escasos y difíciles de obtener') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son raros y difíciles de conseguir') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de hallar y valiosos') || respuesta.includes('Que son escasos y difíciles de localizar') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de obtener y valiosos') || respuesta.includes('Que son raros y difíciles de descubrir') || respuesta.includes('que es dificil de conseguir') || respuesta.includes('que son difíciles de conseguir') || respuesta.includes('Que son escasos y difíciles de hallar') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de localizar y valiosos') || respuesta.includes('Que son raros y difíciles de obtener') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son escasos y difíciles de conseguir') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('que son dificiles de conseguir') || respuesta.includes('que son difíciles de conseguir') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de obtener y valiosos') || respuesta.includes('Que son escasos y difíciles de descubrir') || respuesta.includes('que no son faciles de conseguir') || respuesta.includes('que no son fáciles de conseguir') || respuesta.includes('Que son difíciles de hallar y valiosos') || respuesta.includes('Que son raros y difíciles de localizar') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de descubrir y valiosos') || respuesta.includes('Que son escasos y difíciles de obtener') || respuesta.includes('Que no se encuentran fácilmente y son apreciados') || respuesta.includes('Que son difíciles de conseguir y valiosos') || respuesta.includes('Que son raros y difíciles de hallar') || respuesta.includes('Que no se encuentran con facilidad y son apreciados') || respuesta.includes('Que son difíciles de localizar y valiosos') || respuesta.includes('Que son escasos y difíciles de descubrir') || respuesta.includes('Que no se encuentran fácilmente y son apreciados')) {
+                alert(" Esperoo que no te haya costado mucho jeje 😖");
+                siguienteSeccion(3);
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
